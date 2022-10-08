@@ -22,32 +22,6 @@ The model is trained by 2 groups of labeled images: Covid Positive and Covid Neg
 Potential Results and Discussion:
  
 We plan to use classification metrics from scikit-learn. More precisely, due to the binary nature of our image classifier, where we either identify the image as “Covid Positive” or “Not Covid Negative”, we plan to conduct binary classification using precision_recall_curve(). We predict that our model will reach at least 90% accuracy in identifying Covid. We will raise a discussion about what other models can be used and why we choose one over the others.
- 
-Contribution Table:
-
-Person
-
-Contributions
-
-Shijie Wang
-
-Introduction
-
-Haoyuan Wei
-
-Proposed Timeline, Methods, Problem Definition
-
-Qihang Hu
-
-Methods, Introduction, References
-
-Seong Hok Lao
-
-Introduction, Problem Definition, Potential Results
-
-Zixiang Xu
-
-References & Contributions Table
 
  
 
