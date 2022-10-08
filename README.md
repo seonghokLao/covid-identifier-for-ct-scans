@@ -1,1 +1,1 @@
-# cs4641-machine-learning-project
+# chest-xray-covid-identifier
