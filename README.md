@@ -40,7 +40,7 @@ References & Contributions Table
  
 ## Link to Dataset:
 https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset
-Link to Gantt Chart:
+## Link to Gantt Chart:
 https://docs.google.com/spreadsheets/d/1hWJDLwGgn0_DzW2z-kzkuP65He5jon1U/edit?usp=sharing&ouid=100331825873577630128&rtpof=true&sd=true
 
 ## References
