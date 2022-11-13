@@ -31,7 +31,7 @@ Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
 ![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epoches between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. We can conlude that when epoches is larger than 8, our model has a fairly high chance (about 95%) to successfully predict covid from chest x-ray.
+From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 95% validation accuracy.
  
 ## Contribution Table:
 
