@@ -30,8 +30,13 @@ We first split data using the procedure in preprocessing.
 Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
-![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
+![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 95% validation accuracy.
+
+Here are sample predictions by passing in images extracted from our test dataset into our model.
+![model predictions](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_predictions.png)  
+Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
+Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
  
 ## Contribution Table:
 
