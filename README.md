@@ -41,6 +41,7 @@ Training our model using DenseNet121 with weights pretrained from ImageNet seems
 ## Contribution Table:
 
 | Person | Contributions |
+| ----------- | ----------- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
 Shijie Wang
 Introduction
