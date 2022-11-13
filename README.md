@@ -3,19 +3,19 @@
 We aim to classify x-ray images of people’s chests to identify which images indicate that one is COVID-19 positive.
  
 Through our research, we found that the occurrence of abnormal chest x-rays is highly corresponding to Covid-19 (Rousan et al., 2020). Inspired by the fact that chest imaging is not a first-line test for COVID-19 due to low diagnostic accuracy and confounding with other viral pneumonias, Nikolaou et al. showed that with the aid of machine learning, it is feasible to accurately distinguish COVID-19 from other viral pneumonia and healthy lungs on x-ray pictures (Nikolaou et al., 2021). After determination of the COVID-19 disease course and severity using chest X-ray (CXR) scoring system, Yasin & Gouda showed that Radiographic findings can be utilized to evaluate long-term effects because they are great predictors of the course of the COVID-19 disease (Yasin & Gouda, 2020).
- 
+
 We conclude that chest X-rays are applicable and reliable imaging techniques to identify the coronavirus. With the Chest X-Ray dataset, we aim to develop a Machine Learning Model to classify the X-Rays of Healthy vs. COVID-19 affected patients.
  
 ## Problem definition: 
 The fastest and most effective ways to test Covid-19 are to use PCR and antigen. However, neither of these 2 approaches to covid testing visualize the infection. In this project, the “chest x-ray testing” approach for classifying Covid patients will be investigated if it is an accurate testing procedure with visualization.
  
 ## Methods:
-The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc. 
+The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc.   
 The model is trained by 2 groups of labeled images: Covid Positive and Covid Negative. The model will make classifications on input images. We will use SIFT to detect and describe local features in images and compare the features in two images. Then, we will use Logistic Regression to predict the binary outcome for our observation of the two images. 
  
 ## Results and Discussion:
 ### Model 1: CNN based on DenseNet121
-Densely Connected Convolutional Networks, or DenseNet, is a method to increase the depth of deep convolutional network.
+Densely Connected Convolutional Networks, or DenseNet, is a method to increase the depth of deep convolutional network.  
 It simplifies the connectivity pattern between the layers. With the nature of require fewer parameters, DenseNet avoids learning redundant feature map. In our first model, we use DenseNet121, which is a DenseNet model that performs image classification.
 
 #### Preprocessing:
@@ -30,7 +30,7 @@ We first split data using the procedure in preprocessing.
 Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
-![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)
+![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epoches between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. We can conlude that when epoches is larger than 8, our model has a fairly high chance (about 95%) to successfully predict covid from chest x-ray.
  
 ## Contribution Table:
