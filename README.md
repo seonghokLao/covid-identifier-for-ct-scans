@@ -1,4 +1,4 @@
-# Chest X-Ray Covid Testing: Team 70 Project Proposal
+# CT-Scan Covid Identifier: Team 70 Project Proposal
 ## Introduction/Background:
 We aim to classify x-ray images of people’s chests to identify which images indicate that one is COVID-19 positive.
  
