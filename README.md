@@ -31,7 +31,7 @@ Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 95% validation accuracy.
+The number of epohs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 95% validation accuracy.
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
 ![model predictions](./assets/densenet_predictions.png)  
@@ -40,15 +40,15 @@ Training our model using DenseNet121 with weights pretrained from ImageNet seems
  
 ## Contribution Table:
 
-Person
-Contributions
+| Person | Contributions |
+| Seong Hok Lao | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
 Shijie Wang
 Introduction
 Haoyuan Wei
 Proposed Timeline, Methods, Problem Definition
 Qihang Hu
 Methods, Introduction, References
-Seong Hok Lao
+
 Introduction, Problem Definition, Potential Results, Video
 Zixiang Xu
 References & Contributions Table
