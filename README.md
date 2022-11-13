@@ -28,7 +28,7 @@ Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 #### Results:
 screenshots of accuracy and predictions. discuss.
  
-Contribution Table:
+## Contribution Table:
 
 Person
 Contributions
