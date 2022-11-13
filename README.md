@@ -43,16 +43,10 @@ Training our model using DenseNet121 with weights pretrained from ImageNet seems
 | Person | Contributions |
 | ----------- | ----------- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
-Shijie Wang
-Introduction
-Haoyuan Wei
-Proposed Timeline, Methods, Problem Definition
-Qihang Hu
-Methods, Introduction, References
-
-Introduction, Problem Definition, Potential Results, Video
-Zixiang Xu
-References & Contributions Table
+| Shijie Wang |  |
+| Haoyuan Wei |  |
+| Qihang Hu |  |
+| Zixiang Xu |  |
  
 ## Link to Dataset:
 https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset
