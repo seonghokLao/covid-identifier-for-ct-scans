@@ -19,7 +19,7 @@ DenseNet121 is a ...
 
 #### Preprocessing:
 We divided our 2482-image dataset into **train**, **validation**, and **test** subfolders with a ratio of .7:.15:.15 using a package called **split-folders**.
-Then, using the `flow_from_directory()` function of ImageDataGenerator from Keras
+Then, using the `flow_from_directory()` function of ImageDataGenerator from Keras, we resized the images to (64, 64, 3) before passing them into `train_ds` and `val_ds` variables. The data flowed into `train_ds` are shuffled for a possibly better training outcome. The resizing was necessary due to the input size of DenseNet121, which we will further discuss below.
 
 #### Neural Network Details:
 
