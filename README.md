@@ -18,7 +18,7 @@ The model is trained by 2 groups of labeled images: Covid Positive and Covid Neg
 DenseNet121 is a ...
 
 #### Preprocessing:
-We resized all images to (64, 64, 3)...
+We divided our 2482-image dataset into **train**, **validation**, and **test** subfolders with a ratio of .7:.15:.15 using a package called **split-folders**.
 
 #### Neural Network Details:
 
