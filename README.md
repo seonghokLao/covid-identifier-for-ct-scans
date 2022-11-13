@@ -28,8 +28,8 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 #### Training Procedure:
 Our Dataset commes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
 Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics.  
-`optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)  
- model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`
+`optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)`  
+`model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`
 
 Fitting the model, we found that as epoch increases, accuracy increases while loss decreases. Apply our model on a few test images, we found all predictions matches their corresponding labels.
 Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
@@ -44,7 +44,6 @@ Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respe
 Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
  
 ## Contribution Table:
-
 | Person | Contributions |
 | ----------- | ----------- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
