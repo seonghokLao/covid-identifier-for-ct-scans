@@ -26,7 +26,7 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 ![image info](./assets/densenet_model_summary.png)
 
 #### Training Procedure:
-We first split data using the procedure in preprocessing.
+We first split data using the procedure in preprocessing. Using ImageDataGenerator on training dataset, we found images belongs to 2 classes: covid and normal. Then, we build our model from DenseNet121, with Keras Adam as the optimizer, 0,02 as the learning rate. As shown in the graph under Neural Network Details, our model found 7,219,414 trainable parameters. Fitting the model, we found that as epoch increases, accuracy increases while loss decreases. Apply our model on a few test images, we found all predictions matches their corresponding labels.
 Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
