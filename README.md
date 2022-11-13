@@ -15,7 +15,8 @@ The model is trained by 2 groups of labeled images: Covid Positive and Covid Neg
  
 ## Results and Discussion:
 ### Model 1: CNN based on DenseNet121
-DenseNet121 is a ...
+Densely Connected Convolutional Networks, or DenseNet, is a method to increase the depth of deep convolutional network.
+It simplifies the connectivity pattern between the layers. With the nature of require fewer parameters, DenseNet avoids learning redundant feature map. In our first model, we use DenseNet121, which is a DenseNet model that performs image classification.
 
 #### Preprocessing:
 We divided our 2482-image dataset into **train**, **validation**, and **test** subfolders with a ratio of .7:.15:.15 using a package called **split-folders**.
@@ -24,11 +25,13 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 #### Neural Network Details:
 ![image info](./assets/densenet_model_summary.png)
 
-#### Training Method:
+#### Training Procedure:
+We first split data using the procedure in preprocessing.
 Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
 
 #### Results:
-screenshots of accuracy and predictions. discuss.
+![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)
+From the model, we found that epochs and accuracy are positively correlated. As epochs increases, model predicts more precisely. Meanwhile, the increase in epochs results in smaller loss. With epoches between 8 and 10, the traning accuracy is between 0.95 to 1, with a fair loss. We can conlude that when epoches is larger than 8, our model has a fairly high chance (about 95%) to successfully predict covid from chest x-ray.
  
 ## Contribution Table:
 
