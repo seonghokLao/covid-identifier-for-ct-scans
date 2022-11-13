@@ -13,8 +13,20 @@ The fastest and most effective ways to test Covid-19 are to use PCR and antigen.
 The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc. 
 The model is trained by 2 groups of labeled images: Covid Positive and Covid Negative. The model will make classifications on input images. We will use SIFT to detect and describe local features in images and compare the features in two images. Then, we will use Logistic Regression to predict the binary outcome for our observation of the two images. 
  
-## Potential Results and Discussion:
-We plan to use classification metrics from scikit-learn. More precisely, due to the binary nature of our image classifier, where we either identify the image as “Covid Positive” or “Covid Negative”, we plan to conduct binary classification using precision_recall_curve(). We expect that our model will reach at least 90% accuracy in identifying Covid. We will raise a discussion about what other models can be used and why we choose one over the others.
+## Results and Discussion:
+### Model 1: CNN based on DenseNet121
+DenseNet121 is a ...
+
+#### Preprocessing:
+We resized all images to (64, 64, 3)...
+
+#### Neural Network Details:
+
+#### Training Method:
+Datasplit ... optimizer (Adam) ... learning rate ...  batch size ... epochs ...
+
+#### Results:
+screenshots of accuracy and predictions. discuss.
  
 Contribution Table:
 
