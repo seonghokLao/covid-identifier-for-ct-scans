@@ -49,13 +49,13 @@ A Vision Transformer (ViT) is a transformer that is designed specifically at vis
 
 Transformers measure attention—the relationships between pairs of input tokens. For images, the basic unit of analysis is the pixel. ViT computes relationships among pixels in a variety of tiny picture portions at a significantly lower cost.  
 
-#### Vision Transformer Details:
+#### Vision Transformer Overview:
 
-![image info](./assets/vit_param.png)
+![image info](./assets/vit_arch.png)
 
 #### Training Procedure:
 
-We first split data using the procedure in preprocessing. Using sklearn.model_selection.train_test_split on the training dataset, we found images belong to 2 classes: COVID and non-COVID. Then, we build our model from vit_base_patch16_224, with Adam as the optimizer. The trainable parameters are shown in the graph under Vision Transformer Details. Fitting the model, we found that as epoch increases, accuracy increases while loss decreases. Applying our model to a few test images, we found all predictions match their corresponding labels.  
+We first split data using the procedure in preprocessing. Using sklearn.model_selection.train_test_split on the training dataset, we found images belong to 2 classes: COVID and non-COVID. Then, we build our model from vit_base_patch16_224, with Adam as the optimizer. The model details are shown in the graph under Vision Transformer Overview. Fitting the model, we found that as epoch increases, accuracy increases while loss decreases. Applying our model to a few test images, we found all predictions match their corresponding labels.  
 
 #### Results:
 ![model loss](./assets/vit_acc.png)![image info](./assets/vit_loss.png)  
