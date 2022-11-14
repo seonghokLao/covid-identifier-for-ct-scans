@@ -35,7 +35,7 @@ We ran our training for 10 epochs for 50 steps per epoch. We then saved the mode
 
 #### Results:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-The number of epohs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016.
+The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
 ![model predictions](./assets/densenet_predictions.png)  
@@ -65,7 +65,7 @@ The number of epochs is roughly positively correlated with accuracy and negative
 | ----------- | ----------- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Midterm Report |
 | Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Midterm Report |
-| Haoyuan Wei | Results Evaluation and Analysis, Midterm Report |
+| Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report |
 | Qihang Hu |  |
 | Zixiang Xu |  |
  
