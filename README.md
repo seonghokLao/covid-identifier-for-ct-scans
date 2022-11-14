@@ -42,12 +42,30 @@ Here are sample predictions by passing in images extracted from our test dataset
 ![model predictions](./assets/densenet_predictions.png)  
 Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
 Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
+
+### Model2: Vision Transformer (ViT)
+
+A Vision Transformer (ViT) is a transformer that is designed specifically at vision processing tasks such as image recognition.  
+
+Transformers measure attention—the relationships between pairs of input tokens. For images, the basic unit of analysis is the pixel. ViT computes relationships among pixels in a variety of tiny picture portions at a significantly lower cost.  
+
+#### Vision Transformer Details:
+
+![image info](./assets/vit_param.png)
+
+#### Training Procedure:
+
+We first split data using the procedure in preprocessing. Using sklearn.model_selection.train_test_split on the training dataset, we found images belong to 2 classes: COVID and non-COVID. Then, we build our model from vit_base_patch16_224, with Adam as the optimizer. The trainable parameters are shown in the graph under Vision Transformer Details. Fitting the model, we found that as epoch increases, accuracy increases while loss decreases. Applying our model to a few test images, we found all predictions match their corresponding labels.  
+
+#### Results:
+![model loss](./assets/vit_acc.png)![image info](./assets/vit_loss.png)
+The number of epochs is roughly positively correlated with accuracy and negatively correlated with loss. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.88 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 88% validation accuracy.
  
 ## Contribution Table:
 | Person | Contributions |
 | ----------- | ----------- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
-| Shijie Wang |  |
+| Shijie Wang | Data Sourcing and Cleaning, Model Selection, Data Pre-Processing, Model Coding, Results Evaluation and Analysis, Midterm Report |
 | Haoyuan Wei |  |
 | Qihang Hu |  |
 | Zixiang Xu |  |
