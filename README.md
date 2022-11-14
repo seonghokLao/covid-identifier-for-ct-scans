@@ -26,7 +26,7 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 ![image info](./assets/densenet_model_summary.png)
 
 #### Training Procedure:
-Our Dataset commes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
+Our Dataset comes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
 Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. Our model is backed by TensorFlow and Keras, and DenseNet121 is directly imported from `keras.applications`. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics of our model.  
 `optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)`  
 `model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`  
@@ -41,6 +41,8 @@ Here are sample predictions by passing in images extracted from our test dataset
 ![model predictions](./assets/densenet_predictions.png)  
 Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
 Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
+
+---
 
 ### Model2: Vision Transformer (ViT)
 
