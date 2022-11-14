@@ -27,7 +27,7 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 
 #### Training Procedure:
 Our Dataset commes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
-Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics.  
+Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. Our model is backed by TensorFlow and Keras, and DenseNet121 is directly imported from `keras.applications`. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics of our model.  
 `optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)`  
 `model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`
 
