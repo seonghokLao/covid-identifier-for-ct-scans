@@ -1,4 +1,4 @@
-# Covid Identifier for CT-Scans: Team 70 Project
+# Covid Identifier for CT Scans: Team 70 Project
 ## Introduction/Background:
 We aim to classify x-ray images of people’s chests to identify which images indicate that one is COVID-19 positive.
  
