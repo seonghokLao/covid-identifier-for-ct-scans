@@ -59,7 +59,7 @@ We first split data using the procedure in preprocessing. Using sklearn.model_se
 
 #### Results:
 ![model loss](./assets/vit_acc.png)![image info](./assets/vit_loss.png)  
-The number of epochs is roughly positively correlated with accuracy and negatively correlated with loss. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Meanwhile, the increase in epochs results in smaller loss. With epochs between 8 and 10, the traning accuracy is between 0.88 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 88% validation accuracy.
+The number of epochs is roughly positively correlated with accuracy and negatively correlated with loss. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Meanwhile, the increase in epochs results in a smaller loss. With epochs between 8 and 10, the training accuracy is between 0.88 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 88% validation accuracy.
  
 ## Contribution Table:
 | Person | Contributions |
