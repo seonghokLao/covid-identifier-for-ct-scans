@@ -69,7 +69,7 @@ The number of epochs is roughly positively correlated with accuracy and negative
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Midterm Report |
 | Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Midterm Report |
 | Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report |
-| Qihang Hu |  |
+| Qihang Hu | Midterm Report |
 | Zixiang Xu |  |
  
 ## Link to Dataset:
