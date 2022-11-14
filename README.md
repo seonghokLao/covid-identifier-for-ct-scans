@@ -1,4 +1,4 @@
-# CT-Scan Covid Identifier: Team 70 Project Proposal
+# CT-Scan Covid Identifier: Team 70 Project
 ## Introduction/Background:
 We aim to classify x-ray images of people’s chests to identify which images indicate that one is COVID-19 positive.
  
@@ -11,7 +11,7 @@ The fastest and most effective ways to test Covid-19 are to use PCR and antigen.
  
 ## Methods:
 The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc.   
-The model is trained by 2 groups of labeled images: Covid Positive and Covid Negative. The model will make classifications on input images. We will use SIFT to detect and describe local features in images and compare the features in two images. Then, we will use Logistic Regression to predict the binary outcome for our observation of the two images. 
+The model is trained by 2 groups of labeled images: Covid and Non-Covid. The model will make classifications on input images.
  
 ## Results and Discussion:
 ### Model 1: CNN based on DenseNet121
