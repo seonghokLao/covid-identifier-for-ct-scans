@@ -56,11 +56,11 @@ We changed the parameters of the optimizer and repeated the training for 10 epoc
 |0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |  
 
 From the table, we noticed that  
-a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease. Meanwhile, the validation result seems to be less steady than the original one.  
-b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
-c) When the Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
+a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease.
+b) When Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
+c) When Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
 
-We conclude that in order to get the optimal validation result, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights, and keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
+We conclude that in order to get optimal results, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights. We should also keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
 
 #### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
