@@ -37,8 +37,15 @@ We ran our training for 10 epochs for 50 steps per epoch. We then saved the mode
 
 | Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss	Accuracy	| Val_loss |	Val_accuracy|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| a |	b	| c	| d |	e |	f	| g	| h|	i|
-| a |	b	| c	| d |	e |	f	| g	| h|	i|
+| 0.001 |	0.9 |	0.999 |	0.1	| 0 | Epoch10	| 0.0742	| 0.9714 | 0.1016 |	0.9704 |
+|0.002 |	0.9	| 0.999 |	0.1 |	0 | Epoch8	| 0.0573	| 0.9794	| 0.1036	| 0.9623 |
+|0.005	| 0.9	| 0.999	| 0.1	| 0 | Epoch9	| 0.0534	| 0.9822	| 0.2637	| 0.8976 |
+|0.001	| 0.8	| 0.999	| 0.1	| 0 | Epoch10	| 0.098	| 0.9645	| 0.1653	| 0.9461 |
+|0.001	| 0.75	| 0.999	| 0.1	| 0 | Epoch10	| 0.0703	| 0.9727	| 0.1543	| 0.9515 |
+|0.001	| 0.5	| 0.999	| 0.1	| 0 | Epoch10	| 0.1291	| 0.9499	| 0.184	| 0.9299 |
+|0.001	| 0.9	| 0.95	| 0.1	| 0 | Epoch10	| 0.0468	| 0.9835	| 0.1091	| 0.9596 |
+|0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |
+
 
 #### Results:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
