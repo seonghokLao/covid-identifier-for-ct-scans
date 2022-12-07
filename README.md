@@ -116,7 +116,7 @@ We still manage to roughly classify our data points into 2 subsets as shown abov
 
 ## Conclusion:
 
-Here's a summary of the validation accuracies of our 3 models.
+Here's a summary of the validation accuracies of our 3 models.  
 |Models|Validation Accuracy|
 |---|---|
 |DenseNet121|97.04%|
