@@ -53,7 +53,7 @@ a) When the Learning Rate becomes larger, the optimal validation loss will incre
 b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
 c) When the Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
 
-We conclude that in order to get the optimal validation result, we need to minimize our learning rate while keeping Beta_1 and Beta_2 as close to 1 as possible.  
+We conclude that in order to get the optimal validation result, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights, and keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
 
 ##### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
@@ -90,7 +90,7 @@ The number of epochs is roughly positively correlated with accuracy and negative
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Midterm Report |
 | Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Midterm Report |
 | Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report |
-| Qihang Hu | Results Evaluation and Analysis (Model 1), Fine Tuning for validation (Model 1), Midterm Report, Final Report |
+| Qihang Hu | Results Evaluation and Analysis (Model 1), Finely Tune Hyperparameters (Model 1), Midterm Report, Final Report |
 | Zixiang Xu |  |
  
 ## Link to Dataset:
