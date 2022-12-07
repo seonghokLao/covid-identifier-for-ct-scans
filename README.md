@@ -105,7 +105,8 @@ We then created an encoder of dimension 2. Our encoder lowers the dimentionality
 ![image info](./assets/kmeans_encoder.png)
 
 #### Training Procedure:
-We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 to 10 clusters by firstly initializing our model as such `kmeans = KMeans(init='k-means++', n_clusters=i)`, then training it with our encoded training dataset `kmeans.fit(encoded_train)`. With the trained K-Means model, we proceed to predict the labels of our validation data using `kmeans.fit_predict(encoded_val)`.
+We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 to 10 clusters by firstly initializing our model as such:  
+`kmeans = KMeans(init='k-means++', n_clusters=i)`, then training it with our encoded training dataset `kmeans.fit(encoded_train)`. With the trained K-Means model, we proceed to predict the labels of our validation data using `kmeans.fit_predict(encoded_val)`.
 
 #### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
