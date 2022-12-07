@@ -47,7 +47,7 @@ The number of epochs is positively correlated with accuracy and negatively corre
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
 ![image info](./assets/densenet_predictions.png)
-Note that labels [1,0] and [0,1] represent COVID and NON-COVID respectively.
+Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.
 Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
 
 #### Fine Tuning:
@@ -110,9 +110,11 @@ We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 
 
 #### Visualization:
 ![model loss](./assets/kmeans_cluster_quality.png)![image info](./assets/kmeans_model_acc.png)  
-The accuracy of our model is negatively correlated with the increasing number of clusters and performs best at 2 clusters.  
-![model predictions](./assets/kmeans_true_labels.png)![model predictions](./assets/kmeans_pred_labels.png)  
-Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of 
+We evaluate our cluster quality with Silhouette Coefficient. As seen, the model with 2 clusters has the best quality. Also, the accuracy of our model is negatively correlated with the increasing number of clusters and reaches its highest of **0.6498993963782697** at 2 clusters.
+![model predictions](./assets/kmeans_true_labels.png)  
+Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of data points that are of a different label but are positioned at a similar location, making it extremley hard to cluster properly and differentiate.
+![model predictions](./assets/kmeans_pred_labels.png)  
+We still manage to roughly classify our data points into 2 subsets as shown above.
 
 ---
 
