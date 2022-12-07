@@ -34,8 +34,7 @@ As shown, our loss is calculated using categorical_crossentropy.
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
 
 #### Fine Tuning:
-We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training.  
-
+We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training. (We plot the most optimal result of each training in the following table.)  
 
 | Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss |	Accuracy	| Val_loss |	Val_accuracy|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -46,8 +45,7 @@ We changed the parameters of the optimizer and repeated the training for 10 epoc
 |0.001	| 0.75	| 0.999	| 0.1	| 0 | Epoch10	| 0.0703	| 0.9727	| 0.1543	| 0.9515 |
 |0.001	| 0.5	| 0.999	| 0.1	| 0 | Epoch10	| 0.1291	| 0.9499	| 0.184	| 0.9299 |
 |0.001	| 0.9	| 0.95	| 0.1	| 0 | Epoch10	| 0.0468	| 0.9835	| 0.1091	| 0.9596 |
-|0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |
-
+|0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |  
 
 #### Results:
 From the table, we noticed that  
@@ -55,7 +53,7 @@ a) When the Learning Rate becomes larger, the optimal validation loss will incre
 b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
 c) When the Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
 
-We conclude that in order to get the optimal validation result, we need to minimize our learning rate while keeping Beta_1 and Beta_2 as close to 1 as possible. 
+We conclude that in order to get the optimal validation result, we need to minimize our learning rate while keeping Beta_1 and Beta_2 as close to 1 as possible.  
 
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
@@ -99,6 +97,9 @@ The number of epochs is roughly positively correlated with accuracy and negative
 https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset
 ## Link to Gantt Chart:
 https://docs.google.com/spreadsheets/d/1hWJDLwGgn0_DzW2z-kzkuP65He5jon1U/edit?usp=sharing&ouid=100331825873577630128&rtpof=true&sd=true
+## Link to Training Result:
+Data: https://docs.google.com/spreadsheets/d/1ATqeHFR6CcDypgw3NDMJB8oJDk191Wis-cfDb1AM5cw/edit?usp=share_link  
+Visualization: https://drive.google.com/drive/folders/1dzO-1pxoKyfDrCtm3AKNK0xlA8LVgQtX?usp=share_link
 
 ## References
 Nikolaou, V., Massaro, S., Fakhimi, S., Stergioulas, M., & Garn, W. (2021). COVID-19 diagnosis from chest x-rays: developing a simple, fast, and accurate neural network. Health information science and systems, 9(1), 36. https://doi.org/10.1007/s13755-021-00166-4
