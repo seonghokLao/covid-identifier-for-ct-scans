@@ -55,7 +55,6 @@ We changed the parameters of the optimizer and repeated the training for 10 epoc
 |0.001	| 0.9	| 0.95	| 0.1	| 0 | Epoch10	| 0.0468	| 0.9835	| 0.1091	| 0.9596 |
 |0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |  
 
-#### Results:
 From the table, we noticed that  
 a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease. Meanwhile, the validation result seems to be less steady than the original one.  
 b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
@@ -63,7 +62,7 @@ c) When the Beta_2 becomes smaller, the optimal validation loss will increase an
 
 We conclude that in order to get the optimal validation result, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights, and keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
 
-##### Visualization:
+#### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
 
