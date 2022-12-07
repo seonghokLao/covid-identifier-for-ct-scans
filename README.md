@@ -33,6 +33,12 @@ Then, we build our model using DenseNet121 with pretrained weights obtained from
 As shown, our loss is calculated using categorical_crossentropy.  
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
 
+#### Fine Tuning:
+
+| Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss	Accuracy	| Val_loss |	Val_accuracy|
+| --- | --- |
+| a |	b	| c	| d |	e |	f	| g	| h|	i|
+
 #### Results:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
