@@ -42,9 +42,12 @@ As shown, our loss is calculated using categorical_crossentropy.
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
 
 #### Visualization:
-
+![image info](./assets/densenet_model_summary.png)![image info](./assets/densenet_model_summary.png)  
 The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
- 
+
+Here are sample predictions by passing in images extracted from our test dataset into our model.
+![image info](./assets/densenet_predictions.png)
+Note that labels [1,0] and [0,1] represent COVID and NON-COVID respectively.
 Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
 
 #### Fine Tuning:
@@ -107,9 +110,7 @@ We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 
 
 #### Visualization:
 ![model loss](./assets/kmeans_cluster_quality.png)![image info](./assets/kmeans_model_acc.png)  
-The accuracy of our model is negatively correlated with the increasing number of clusters and performs best at 2 clusters.
-
-Here are sample predictions by passing in images extracted from our test dataset into our model.
+The accuracy of our model is negatively correlated with the increasing number of clusters and performs best at 2 clusters.  
 ![model predictions](./assets/kmeans_true_labels.png)![model predictions](./assets/kmeans_pred_labels.png)  
 Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of 
 
