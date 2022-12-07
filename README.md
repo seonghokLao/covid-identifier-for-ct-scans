@@ -34,9 +34,17 @@ As shown, our loss is calculated using categorical_crossentropy.
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
 
 #### Fine Tuning:
+We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training. 
+From the table, we noticed that 
+a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease. 
+b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.
+c) When the Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease. 
 
-| Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss	Accuracy	| Val_loss |	Val_accuracy|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+We conclude that in order to get the optimal validation result, we need to minimize our learning rate while keeping Beta_1 and Beta_2 as close to 1 as possible. 
+
+
+| Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss |	Accuracy	| Val_loss |	Val_accuracy|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0.001 |	0.9 |	0.999 |	0.1	| 0 | Epoch10	| 0.0742	| 0.9714 | 0.1016 |	0.9704 |
 |0.002 |	0.9	| 0.999 |	0.1 |	0 | Epoch8	| 0.0573	| 0.9794	| 0.1036	| 0.9623 |
 |0.005	| 0.9	| 0.999	| 0.1	| 0 | Epoch9	| 0.0534	| 0.9822	| 0.2637	| 0.8976 |
