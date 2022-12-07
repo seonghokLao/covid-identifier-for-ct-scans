@@ -13,9 +13,9 @@ The fastest and most effective ways to test Covid-19 are to use PCR and antigen.
 Our dataset is collected from Kaggle:
 <https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset>
 
-This raw data(images) is a Kaggle dataset of CT scans collected from real SARS-CoV-2 patients in Sao Paulo Hospital, Brazil. The dataset contains 1252 CT scans of positive SARS-CoV-2 infection and 1230 scans of non-infected patients; in total 2482 CT-scan data.
+This raw data(images) is a Kaggle dataset of CT scans collected from real SARS-CoV-2 patients in the hospitals at São Paulo, Brazil. The dataset contains 1252 CT scans of positive SARS-CoV-2 infection and 1230 scans of non-infected patients; in total, 2482 CT-scan data.
 
-Most of the images are shown as black and white CT scans of the infected lungs of different types of Covid-19 patients using X-rays. First of all, the vast majority of these lung images are well-balanced in size and proportion, making them suitable data for analysis. Second, these pictures are very clear, allowing us to efficiently and accurately analyze the data of the lungs of Covid-19 patients. Next, the number of these data sets is very large, and each label has nearly 1,000 images for us to test. Finally, the pictures of each label have been classified into different folders, and we do not need further large-scale screening and classification.
+Most images are shown as black-and-white CT scans of the infected lungs of different types of Covid-19 patients using X-rays. First, the vast majority of these lung images are well-balanced in size and proportion, making them suitable data for analysis. Second, these images are very clear, allowing us to efficiently and accurately analyze the data on the lungs of Covid-19 patients. Next, these data sets are large enough to test; for example, each label has nearly 1,000 images for us to test. Finally, the images of each label have been classified into different folders, and we do not need further large-scale screening and classification.
 
 ## Methods:
 The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc.   
