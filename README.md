@@ -91,8 +91,7 @@ The number of epochs is roughly positively correlated with accuracy and negative
 ---
 
 ### Model 3: K-Means Clustering
-Densely Connected Convolutional Networks, or DenseNet, is a method to increase the depth of deep convolutional network.  
-It simplifies the connectivity pattern between the layers. With the nature of require fewer parameters, DenseNet avoids learning redundant feature map. In our first model, we use DenseNet121, which is a DenseNet model that performs image classification.
+K-Means Clustering is an unsupervised Machine Learning method. It takes in data points in a 2-Dimensional plane and assigns each of them to a cluster.
 
 #### Preprocessing:
 We firstly resized all images to (64,64) using `cv2.resize()`. Then, using sklearn's `train_test_split`, We divided our 2482-image dataset into **train** and **validation** with a ratio of .8:.2.  
