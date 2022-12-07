@@ -35,7 +35,9 @@ We ran our training for 10 epochs for 50 steps per epoch. We then saved the mode
 
 #### Fine Tuning:
 We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training. 
+
 From the table, we noticed that 
+
 a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease. 
 b) When the Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.
 c) When the Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease. 
