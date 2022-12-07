@@ -56,7 +56,7 @@ We changed the parameters of the optimizer and repeated the training for 10 epoc
 |0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |  
 
 From the table, we noticed that  
-a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease.
+a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease.  
 b) When Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
 c) When Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
 
