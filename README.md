@@ -134,10 +134,10 @@ Our DenseNet121 model has shown great performance and accuracy in classifying lu
 
 | Person | Contributions |
 | --- | --- |
-| Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
-| Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
+| Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
+| Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
 | Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report, Final Report |
-| Qihang Hu | Results Evaluation and Analysis (Model 1), Finely Tune Hyperparameters (Model 1), Midterm Report, Final Report |
+| Qihang Hu | Results Evaluation and Analysis (Model 1), Fine Tuning Hyperparameters (Model 1), Midterm Report, Final Report |
 | Zixiang Xu | Midterm Report, Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Final Report |
  
 ## Link to Dataset:
