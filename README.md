@@ -93,16 +93,16 @@ The number of epochs is roughly positively correlated with accuracy and negative
 
 ---
 
-### Model 1: CNN based on DenseNet121
+### Model 3: K-Means Clustering
 Densely Connected Convolutional Networks, or DenseNet, is a method to increase the depth of deep convolutional network.  
 It simplifies the connectivity pattern between the layers. With the nature of require fewer parameters, DenseNet avoids learning redundant feature map. In our first model, we use DenseNet121, which is a DenseNet model that performs image classification.
 
 #### Preprocessing:
-We divided our 2482-image dataset into **train**, **validation**, and **test** subfolders with a ratio of .7:.15:.15 using a package called **split-folders**.
-Then, using the `flow_from_directory()` function of ImageDataGenerator from Keras, we resized the images to (64, 64, 3) before passing them into `train_ds` and `val_ds` variables. The data flowed into `train_ds` are shuffled for a possibly better training outcome. The resizing was necessary due to the input size of DenseNet121, which we will further discuss below.
+We firstly resized all images to (64,64) using `cv2.resize()`. Then, using sklearn's `train_test_split`, We divided our 2482-image dataset into **train** and **validation** with a ratio of .8:.2.  
+We then created an encoder of dimension 2. Our encoder lowers the dimentionality of our data and encodes it with a 2-D value of the form `[x,y]`. We train our encoder with our **training** dataset, then fit our **validation** dataset to obtain the encoded validation data.
 
-#### Neural Network Details:
-![image info](./assets/densenet_model_summary.png)
+#### Encoder Details:
+![image info](./assets/kmeans_encoder.png)
 
 #### Training Procedure:
 Our Dataset comes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
@@ -111,27 +111,6 @@ Then, we build our model using DenseNet121 with pretrained weights obtained from
 `model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`  
 As shown, our loss is calculated using categorical_crossentropy.  
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
-
-#### Fine Tuning:
-We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training. (We plot the most optimal result of each training in the following table.)  
-
-| Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss |	Accuracy	| Val_loss |	Val_accuracy|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0.001 |	0.9 |	0.999 |	0.1	| 0 | Epoch10	| 0.0742	| 0.9714 | 0.1016 |	0.9704 |
-|0.002 |	0.9	| 0.999 |	0.1 |	0 | Epoch8	| 0.0573	| 0.9794	| 0.1036	| 0.9623 |
-|0.005	| 0.9	| 0.999	| 0.1	| 0 | Epoch10	|	0.0722 |	0.9734 |	0.1864 |	0.9461 |
-|0.001	| 0.8	| 0.999	| 0.1	| 0 | Epoch10	| 0.098	| 0.9645	| 0.1653	| 0.9461 |
-|0.001	| 0.75	| 0.999	| 0.1	| 0 | Epoch10	| 0.0703	| 0.9727	| 0.1543	| 0.9515 |
-|0.001	| 0.5	| 0.999	| 0.1	| 0 | Epoch10	| 0.1291	| 0.9499	| 0.184	| 0.9299 |
-|0.001	| 0.9	| 0.95	| 0.1	| 0 | Epoch10	| 0.0468	| 0.9835	| 0.1091	| 0.9596 |
-|0.001	| 0.9	| 0.9	| 0.1	| 0 | Epoch10	| 0.0647	| 0.9772	|0.1393	| 0.9515 |  
-
-From the table, we noticed that  
-a) When the Learning Rate becomes larger, the optimal validation loss will increase and the optimal validation accuracy will decrease.  
-b) When Beta_1 becomes smaller, the optimal validation accuracy will decrease, while the validation loss will be larger than the original data.  
-c) When Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
-
-We conclude that in order to get optimal results, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights. We should also keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
 
 #### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
