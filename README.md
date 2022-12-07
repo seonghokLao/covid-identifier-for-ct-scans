@@ -35,11 +35,20 @@ Then, using the `flow_from_directory()` function of ImageDataGenerator from Kera
 
 #### Training Procedure:
 Our Dataset comes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
-Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. Our model is backed by TensorFlow and Keras, and DenseNet121 is directly imported from `keras.applications`. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics of our model.  
+Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. Our model is backed by TensorFlow and Keras, and DenseNet121 is directly imported from `keras.applications`. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics of our best model.  
 `optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)`  
 `model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`  
 As shown, our loss is calculated using categorical_crossentropy.  
 We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
+
+#### Visualization:
+![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
+The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
+
+Here are sample predictions by passing in images extracted from our test dataset into our model.
+![model predictions](./assets/densenet_predictions.png)  
+Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
+Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
 
 #### Fine Tuning:
 We changed the parameters of the optimizer and repeated the training for 10 epochs each. After the training, we got the following results and compared the validation loss and validation accuracy of each training. (We plot the most optimal result of each training in the following table.)  
@@ -61,15 +70,6 @@ b) When Beta_1 becomes smaller, the optimal validation accuracy will decrease, w
 c) When Beta_2 becomes smaller, the optimal validation loss will increase and the optimal validation accuracy will decrease.   
 
 We conclude that in order to get optimal results, we need to minimize our learning rate because it can allow the model to learn a more optimal set of weights. We should also keep Beta_1 and Beta_2 as close to 1 as possible since they are multiplied by themselves during training. Besides, we also need to make sure that Beta_1 and Beta_2 are not below 0.5, as it will result in drastic decreases of validation as the number of training steps increases.  
-
-#### Visualization:
-![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
-
-Here are sample predictions by passing in images extracted from our test dataset into our model.
-![model predictions](./assets/densenet_predictions.png)  
-Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
-Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
 
 ---
 
