@@ -117,8 +117,7 @@ The neural network has good performance and accuracy in chest CT-image classific
 <https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset>
 ## Link to Gantt Chart:
 https://docs.google.com/spreadsheets/d/1hWJDLwGgn0_DzW2z-kzkuP65He5jon1U/edit?usp=sharing&ouid=100331825873577630128&rtpof=true&sd=true
-## Link to Training Result:
-Data: https://docs.google.com/spreadsheets/d/1ATqeHFR6CcDypgw3NDMJB8oJDk191Wis-cfDb1AM5cw/edit?usp=share_link  
+## Link to Fine Tuning Results:  
 Visualization: https://drive.google.com/drive/folders/1dzO-1pxoKyfDrCtm3AKNK0xlA8LVgQtX?usp=share_link
 
 ## References
