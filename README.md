@@ -105,21 +105,15 @@ We then created an encoder of dimension 2. Our encoder lowers the dimentionality
 ![image info](./assets/kmeans_encoder.png)
 
 #### Training Procedure:
-Our Dataset comes in 2 folders/labels–**COVID** and **NON-COVID**. We first split our dataset as mentioned in preprocessing, which randomly assigns images to **train**, **validation**, and **test** subfolders regardless of their label.  
-Then, we build our model using DenseNet121 with pretrained weights obtained from ImageNet. Our model is backed by TensorFlow and Keras, and DenseNet121 is directly imported from `keras.applications`. As shown in the graph under Neural Network Details, our model has 7,219,414 trainable parameters. The following are some specifics of our model.  
-`optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=0.1, decay=0.0)`  
-`model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])`  
-As shown, our loss is calculated using categorical_crossentropy.  
-We ran our training for 10 epochs for 50 steps per epoch. We then saved the model with the least validation loss throughout training.
+We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 to 10 clusters by firstly initializing our model as such `kmeans = KMeans(init='k-means++', n_clusters=i)`, then training it with our encoded training dataset `kmeans.fit(encoded_train)`. With the trained K-Means model, we proceed to predict the labels of our validation data using `kmeans.fit_predict(encoded_val)`.
 
 #### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
+The accuracy of our model is negatively correlated with the increasing number of clusters and performs best at 2 clusters.
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
 ![model predictions](./assets/densenet_predictions.png)  
-Note that labels `[1,0]` and `[0,1]` represent **COVID** and **NON-COVID** respectively.  
-Training our model using DenseNet121 with weights pretrained from ImageNet seems viable given the high accuracy in identifying covid. However, whether this is applicable to covid identification in society is yet to be decided.
+Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of 
 
 ---
 
@@ -128,7 +122,7 @@ Training our model using DenseNet121 with weights pretrained from ImageNet seems
 Both our unsupervised and supervised learning algorithms respectively demonstrate the following accuracy data:
 |Models|Test Accuracy|
 |---|---|
-|CNN|95%|
+|DenseNet121|95%|
 |ViT|87.5%|
 |K-means|*AutoEncoder*: 60.76%|
 
