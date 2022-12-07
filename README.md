@@ -10,12 +10,9 @@ We conclude that chest X-rays are applicable and reliable imaging techniques to 
 The fastest and most effective ways to test Covid-19 are to use PCR and antigen. However, neither of these 2 approaches to covid testing visualize the infection. In this project, the “chest x-ray testing” approach for classifying Covid patients will be investigated if it is an accurate testing procedure with visualization.
 
 ## Data Collection:
-Our dataset is collected from Kaggle:
-<https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset>
+Our dataset is collected from Kaggle: https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset
 
-This raw data(images) is a Kaggle dataset of CT scans collected from real SARS-CoV-2 patients in the hospitals at São Paulo, Brazil. The dataset contains 1252 CT scans of positive SARS-CoV-2 infection and 1230 scans of non-infected patients; in total, 2482 CT-scan data.
-
-Most images are shown as black-and-white CT scans of the infected lungs of different types of Covid-19 patients using X-rays. First, the vast majority of these lung images are well-balanced in size and proportion, making them suitable data for analysis. Second, these images are very clear, allowing us to efficiently and accurately analyze the data on the lungs of Covid-19 patients. Next, these data sets are large enough to test; for example, each label has nearly 1,000 images for us to test. Finally, the images of each label have been classified into different folders, and we do not need further large-scale screening and classification.
+These raw data (images) were extracted from a publicly accessible dataset of SARS-CoV-2 CT scans. This dataset includes 2482 CT scans, 1252 of which are COVID positive and 1230 are COVID negative. The data was collected from actual patients who were treated in Sao Paulo, Brazil, hospitals. The dataset contains black and white images of CT Scans of people's chests. With over a thousand images for each label and each image being relatively high in definition, we were provided with a solid foundation for accurate and efficient analysis of machine learning models.
 
 ## Methods:
 The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc.   
@@ -121,15 +118,19 @@ We still manage to roughly classify our data points into 2 subsets as shown abov
 ## Conclusion:
 
 Both our unsupervised and supervised learning algorithms respectively demonstrate the following accuracy data:
-|Models|Test Accuracy|
+|Models|Validation Accuracy|
 |---|---|
-|DenseNet121|95%|
+|DenseNet121|97.04%|
 |ViT|87.5%|
-|K-means|*AutoEncoder*: 60.76%|
+|K-means|64.99|
 
-Shown by the above accuracy data, the neural network represented by the CNN based on DenseNet121 is the most favored by our Covid-19 CT dataset, and its accuracy rate reaches nearly 95%. The accuracy of the ViT model follows closely, and the worst is K-means. The latter two models may improve accuracy in other ways (such as tuning hyperparameters). However, achieving the accuracy of neural networks such as CNN is still challenging.
+Both our unsupervised and supervised learning algorithms respectively demonstrate the following accuracy table:
 
-The neural network has good performance and accuracy in chest CT-image classification for Covid-19 patients and can help hospitals to identify and distinguish whether most patients are infected with Covid-19 efficiently. However, the neural network system still relies heavily on a large amount of data support to sustain the generalization of the model: if there is a lack of data, neural network model that relies on neurons is likely to be overfitting or underfitting, which may cause the model to be unable to recognize patients' chest CT samples effectively. Therefore, we may conduct more targeted research to provide better data analysis support for efficient and accurate identification of Covid-19 patients by improving the model or adopting a better one.
+As shown by the table, the result given by the CNN model based on DenseNet121 has an accuracy rate of 95%. The accuracy of the ViT model is n%, and the worst is the K-means model with a n% accuracy rate. Tuning hyperparameters may be helpful in improving accuracy rate in the other two models, as demonstrated in the fine tuning section under model 1. However, achieving the accuracy of the DenseNet121 model is still challenging.
+
+Model 
+
+The neural network has shown good performance and accuracy in classifying CT scan of lungs for Covid-19 patients. It can be utilized to help hospitals identify and diagnose patients that might be infected with Covid-19. Right now, the neural network system still relies heavily on a large amount of data support to sustain the generalization of the model. If the data is not sufficient, the  neural network model that relies on neurons is likely to be overfitting or underfitting. The model may encounter failure in recognizing patients' CT samples. Therefore, our project can only be a proof of concept that DenseNet 121 is a possible solution to assist hospitals with Covid-19 diagnostics. More targeted research is required to adopt and improve the model for a more accurate result. 
 
 ---
  
