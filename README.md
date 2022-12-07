@@ -38,6 +38,7 @@ We ran our training for 10 epochs for 50 steps per epoch. We then saved the mode
 | Learning Rate |	Beta_1	| Beta_2	| Epsilon |	Decay |	Epoch#	| Loss	Accuracy	| Val_loss |	Val_accuracy|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | a |	b	| c	| d |	e |	f	| g	| h|	i|
+| a |	b	| c	| d |	e |	f	| g	| h|	i|
 
 #### Results:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
