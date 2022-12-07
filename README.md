@@ -116,7 +116,8 @@ We still manage to roughly classify our data points into 2 subsets as shown abov
 
 ## Conclusion:
 
-Here's a summary of the validation accuracies of our 3 models.  
+Here's a summary of the validation accuracies of our 3 models.
+
 |Models|Validation Accuracy|
 |---|---|
 |DenseNet121|97.04%|
@@ -130,6 +131,7 @@ Our DenseNet121 model has shown great performance and accuracy in classifying lu
 ---
  
 #### Contribution Table:
+
 | Person | Contributions |
 | --- | --- |
 | Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
