@@ -43,7 +43,7 @@ We ran our training for 10 epochs for 50 steps per epoch. We then saved the mode
 
 #### Visualization:
 ![image info](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
-The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
+The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of `0.9704` after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
 ![image info](./assets/densenet_predictions.png)
@@ -110,9 +110,9 @@ We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 
 
 #### Visualization:
 ![model loss](./assets/kmeans_cluster_quality.png)![image info](./assets/kmeans_model_acc.png)  
-We evaluate our cluster quality with Silhouette Coefficient. As seen, the model with 2 clusters has the best quality. Also, the accuracy of our model is negatively correlated with the increasing number of clusters and reaches its highest of **0.6498993963782697** at 2 clusters.
+We evaluate our cluster quality with Silhouette Coefficient. As seen, the model with 2 clusters has the best quality. Also, the accuracy of our model is negatively correlated with the increasing number of clusters and reaches its highest of `0.6498993963782697` at 2 clusters.
 ![model predictions](./assets/kmeans_true_labels.png)  
-Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of data points that are of a different label but are positioned at a similar location, making it extremley hard to cluster properly and differentiate.
+Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of data points that are of a different label but are positioned at a similar location, making it extremley hard to cluster properly and differentiate.  
 ![model predictions](./assets/kmeans_pred_labels.png)  
 We still manage to roughly classify our data points into 2 subsets as shown above.
 
