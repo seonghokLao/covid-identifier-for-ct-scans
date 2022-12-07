@@ -8,7 +8,15 @@ We conclude that chest X-rays are applicable and reliable imaging techniques to 
  
 ## Problem definition: 
 The fastest and most effective ways to test Covid-19 are to use PCR and antigen. However, neither of these 2 approaches to covid testing visualize the infection. In this project, the “chest x-ray testing” approach for classifying Covid patients will be investigated if it is an accurate testing procedure with visualization.
- 
+
+## Data Collection:
+Our dataset is collected from Kaggle:
+<https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset>
+
+This raw data(images) is a Kaggle dataset of CT scans collected from real SARS-CoV-2 patients in Sao Paulo Hospital, Brazil. The dataset contains 1252 CT scans of positive SARS-CoV-2 infection and 1230 scans of non-infected patients; in total 2482 CT-scan data.
+
+Most of the images are shown as black and white CT scans of the infected lungs of different types of Covid-19 patients using X-rays. First of all, the vast majority of these lung images are well-balanced in size and proportion, making them suitable data for analysis. Second, these pictures are very clear, allowing us to efficiently and accurately analyze the data of the lungs of Covid-19 patients. Next, the number of these data sets is very large, and each label has nearly 1,000 images for us to test. Finally, the pictures of each label have been classified into different folders, and we do not need further large-scale screening and classification.
+
 ## Methods:
 The packages we are going to use are numpy, pandas, and cv2 (OpenCV). Meanwhile, we are using Keras as the interface for TensorFlow. From TensorFlow, we’d like to import Sequential, Conv2D, MaxPooling2D, etc.   
 The model is trained by 2 groups of labeled images: Covid and Non-Covid. The model will make classifications on input images.
@@ -48,7 +56,7 @@ Training our model using DenseNet121 with weights pretrained from ImageNet seems
 
 A Vision Transformer (ViT) is a transformer that is designed specifically at vision processing tasks such as image recognition.  
 
-Transformers measure attention—the relationships between pairs of input tokens. For images, the basic unit of analysis is the pixel. ViT computes relationships among pixels in a variety of tiny picture portions at a significantly lower cost.  
+Transformers measure attention—the relationships between pairs of input tokens. For images, the basic unit of analysis is the pixel. ViT computes relationships among pixels in a variety of tiny picture portions at a significantly lower cost.
 
 #### Vision Transformer Overview:
 
@@ -61,21 +69,34 @@ We first split data using the procedure in preprocessing. Using sklearn.model_se
 #### Results:
 ![model loss](./assets/vit_acc.png)![image info](./assets/vit_loss.png)  
 The number of epochs is roughly positively correlated with accuracy and negatively correlated with loss. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Meanwhile, the increase in epochs results in a smaller loss. With epochs between 8 and 10, the training accuracy is between 0.88 to 1, with a fair loss. Our validation loss reaches its low at epoch 9, which is where we saved our model. Our model ends up having about 88% validation accuracy.
+
+## Conclusion:
+
+Both our unsupervised and supervised learning algorithms respectively demonstrate the following accuracy data:
+|Models|Test Accuracy|
+|---|---|
+|CNN|95%|
+|ViT|87.5%|
+|K-means|*AutoEncoder*: 60.76%|
+
+Shown by the above accuracy data, the neural network represented by the CNN based on DenseNet121 is the most favored by our Covid-19 CT dataset, and its accuracy rate reaches nearly 95%. The accuracy of the ViT model follows closely, and the worst one is K-means. The latter two models may be able to improve accuracy in other ways (such as tuning hyperparameters), but it is still difficult to achieve the accuracy of neural networks such as CNN.
+
+Obviously, the neural network has good performance and accuracy in chest CT-image classification for Covid-19 patients, and can help hospitals to identify and distinguish whether most patients are infected with Covid-19 efficiently. However, the neural network system still relies heavily on a large amount of data support to sustain the generalization of the model: if there is lack of many data, neural network model that relies on neurons is likely to be overfitting or underfitting, which may cause the model to be unable to recognize patients' chest CT samples effectively. Therefore, we may conduct more targeted research in the future to provide better data analysis support for both efficient and accurate identification of Covid-19 patients by improving the model or adopting a better one.
  
 ## Contribution Table:
 
 | Person | Contributions |
 | --- | --- |
-| Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Midterm Report |
-| Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Midterm Report |
-| Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report |
-| Qihang Hu | Midterm Report |
-| Zixiang Xu |  |
+| Seong Hok Lao | Data Sourcing and Cleaning, Model Selection (Model 1), Data Pre-Processing, Model Coding (Model 1), Results Evaluation and Analysis (Model 1), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
+| Shijie Wang | Data Sourcing and Cleaning, Model Selection (Model 2), Data Pre-Processing, Model Coding (Model 2), Results Evaluation and Analysis (Model 2), Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Midterm Report, Final Report |
+| Haoyuan Wei | Results Evaluation and Analysis (Model 1), Midterm Report, Final Report |
+| Qihang Hu | Midterm Report, Final Report |
+| Zixiang Xu | Midterm Report, Model Coding (Model 3), Results Evaluation and Analysis (Model 3), Final Report |
  
 ## Link to Dataset:
-https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset
+<https://www.kaggle.com/datasets/plameneduardo/sarscov2-ctscan-dataset>
 ## Link to Gantt Chart:
-https://docs.google.com/spreadsheets/d/1hWJDLwGgn0_DzW2z-kzkuP65He5jon1U/edit?usp=sharing&ouid=100331825873577630128&rtpof=true&sd=true
+<https://docs.google.com/spreadsheets/d/1hWJDLwGgn0_DzW2z-kzkuP65He5jon1U/edit?usp=sharing&ouid=100331825873577630128&rtpof=true&sd=true>
 
 ## References
 Nikolaou, V., Massaro, S., Fakhimi, S., Stergioulas, M., & Garn, W. (2021). COVID-19 diagnosis from chest x-rays: developing a simple, fast, and accurate neural network. Health information science and systems, 9(1), 36. https://doi.org/10.1007/s13755-021-00166-4
