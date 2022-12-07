@@ -106,11 +106,11 @@ We make use of sklearn.cluster's `KMeans`. We conducted K-Means clustering on 2 
 `kmeans = KMeans(init='k-means++', n_clusters=i)`, then training it with our encoded training dataset `kmeans.fit(encoded_train)`. With the trained K-Means model, we proceed to predict the labels of our validation data using `kmeans.fit_predict(encoded_val)`.
 
 #### Visualization:
-![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
+![model loss](./assets/kmeans_cluster_quality.png)![image info](./assets/kmeans_model_acc.png)  
 The accuracy of our model is negatively correlated with the increasing number of clusters and performs best at 2 clusters.
 
 Here are sample predictions by passing in images extracted from our test dataset into our model.
-![model predictions](./assets/densenet_predictions.png)  
+![model predictions](./assets/kmeans_true_labels.png)![model predictions](./assets/kmeans_pred_labels.png)  
 Shown above is the distribution of the true labels under our encoding, and the prediction results of our K-Means clustering model. Evidently, there are a lot of 
 
 ---
