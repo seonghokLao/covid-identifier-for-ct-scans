@@ -55,7 +55,7 @@ c) When the Beta_2 becomes smaller, the optimal validation loss will increase an
 
 We conclude that in order to get the optimal validation result, we need to minimize our learning rate while keeping Beta_1 and Beta_2 as close to 1 as possible.  
 
-## Visualization:
+##### Visualization:
 ![model loss](./assets/densenet_model_accuracy.png)![image info](./assets/densenet_model_loss.png)  
 The number of epochs is positively correlated with accuracy and negatively correlated with loss as expected. Validation accuracy and loss seem to fluctuate a lot more than training accuracy and loss. Our model reaches its highest accuracy of 0.9704 after the last epoch which is also when the validation loss reaches its low at 0.1016. Previous model training seesions tend to produce the best model at epoch 9.
 
